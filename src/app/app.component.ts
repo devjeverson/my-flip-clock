@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FlipClockComponent } from './flip-clock/flip-clock.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [FlipClockComponent],
+  template: '<app-flip-clock></app-flip-clock>',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'flip-clock';
-}
+export class AppComponent {}
