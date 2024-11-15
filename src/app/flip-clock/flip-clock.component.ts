@@ -27,7 +27,7 @@ export class FlipClockComponent implements OnInit {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    const hoursFormatted = hours % 12 || 12; // Formato 12 horas
+    const hoursFormatted = hours % 24 || 24; // Formato 24 horas
 
     // Calcula cada dígito do relógio
     this.hoursTens = Math.floor(hoursFormatted / 10);
