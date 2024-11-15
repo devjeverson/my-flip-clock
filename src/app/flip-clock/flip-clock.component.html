@@ -1,28 +1,48 @@
 <div class="clock-container">
-   <div class="flip-unit">
-     <div class="flip-card">
-       <div class="flip-card-front">{{ hoursTens }}</div>
-       <div class="flip-card-back">{{ hoursTens }}</div>
-     </div>
-   </div>
-   <div class="flip-unit">
-     <div class="flip-card">
-       <div class="flip-card-front">{{ hoursUnits }}</div>
-       <div class="flip-card-back">{{ hoursUnits }}</div>
-     </div>
-   </div>
-   <div class="flip-unit">
-     <div class="flip-card">
-       <div class="flip-card-front">{{ minutesTens }}</div>
-       <div class="flip-card-back">{{ minutesTens }}</div>
-     </div>
-   </div>
-   <div class="flip-unit">
-     <div class="flip-card">
-       <div class="flip-card-front">{{ minutesUnits }}</div>
-       <div class="flip-card-back">{{ minutesUnits }}</div>
-     </div>
-   </div>
-   <div class="am-pm">{{ amPm }}</div>
+  <!-- Contêiner de Horas e Minutos -->
+  <div class="time-section">
+    <!-- Hours -->
+    <div class="flip-unit">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ hoursTens }}</div>
+        <div class="flip-card-back">{{ hoursTens }}</div>
+      </div>
+    </div>
+    <div class="flip-unit">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ hoursUnits }}</div>
+        <div class="flip-card-back">{{ hoursUnits }}</div>
+      </div>
+    </div>
+
+    <!-- Minutes -->
+    <div class="flip-unit">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ minutesTens }}</div>
+        <div class="flip-card-back">{{ minutesTens }}</div>
+      </div>
+    </div>
+    <div class="flip-unit">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ minutesUnits }}</div>
+        <div class="flip-card-back">{{ minutesUnits }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contêiner de Segundos (Linha Inferior) -->
+  <div class="seconds-section">
+    <div class="flip-unit small">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ secondsTens }}</div>
+        <div class="flip-card-back">{{ secondsTens }}</div>
+      </div>
+    </div>
+    <div class="flip-unit small">
+      <div class="flip-card">
+        <div class="flip-card-front">{{ secondsUnits }}</div>
+        <div class="flip-card-back">{{ secondsUnits }}</div>
+      </div>
+    </div>
+  </div>
 </div>
-   

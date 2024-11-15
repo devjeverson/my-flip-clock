@@ -11,26 +11,30 @@ export class FlipClockComponent implements OnInit {
   hoursUnits = 0;
   minutesTens = 0;
   minutesUnits = 0;
-  amPm = 'AM';
+  secondsTens = 0;
+  secondsUnits = 0;
 
   ngOnInit(): void {
     this.updateClock();
     setInterval(() => {
       this.updateClock();
-    }, 1000);
+    }, 1000); // Atualiza a cada segundo
   }
 
   updateClock(): void {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
 
-    this.amPm = hours >= 12 ? 'PM' : 'AM';
-    const hoursFormatted = hours % 12 || 12; // 12-hour format
+    const hoursFormatted = hours % 12 || 12; // Formato 12 horas
 
+    // Calcula cada dígito do relógio
     this.hoursTens = Math.floor(hoursFormatted / 10);
     this.hoursUnits = hoursFormatted % 10;
     this.minutesTens = Math.floor(minutes / 10);
     this.minutesUnits = minutes % 10;
+    this.secondsTens = Math.floor(seconds / 10);
+    this.secondsUnits = seconds % 10;
   }
 }
