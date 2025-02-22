@@ -1,0 +1,30 @@
+name: flip-clock
+base: core18
+version: '1.0.0'
+summary: Flip Clock
+description: |
+  Este é um aplicativo Angular empacotado como um Snap.
+
+grade: stable
+confinement: strict
+
+parts:
+  flip-clock:
+    plugin: dump
+    source: dist/flip-clock
+    organize:
+      '*': usr/share/flip-clock/
+
+apps:
+  flip-clock:
+    command: bin/launch-flip-clock
+    plugs:
+      - network
+      - network-bind
+
+parts:
+  launch-flip-clock:
+    plugin: dump
+    source: .
+    organize:
+      launch-flip-clock.sh: bin/launch-flip-clock

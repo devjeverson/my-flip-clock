@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -46,14 +49,16 @@ html, body {
   width: 300px;
   height: 500px;
   background: #1d1c1c; /* Cinza escuro */
-  color: #fff;      /* Branco */
-  font-size: 420px;
+  color: #b8bdee;      /* Branco */
+  font-size: 320px;
   line-height: 500px;
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
+  font-family: 'Orbitron', sans-serif; /* Fonte digital */
+
 }
 
 /* Estilos específicos para os segundos, menores e alinhados abaixo */
