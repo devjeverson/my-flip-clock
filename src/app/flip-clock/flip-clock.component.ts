@@ -27,7 +27,9 @@ export class FlipClockComponent implements OnInit {
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
 
-    const hoursFormatted = hours % 24 || 24; // Formato 24 horas
+
+    // Exibe 00:00 à meia-noite, não 24:00
+    const hoursFormatted = hours;
 
     // Calcula cada dígito do relógio
     this.hoursTens = Math.floor(hoursFormatted / 10);

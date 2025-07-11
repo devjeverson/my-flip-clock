@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
 
 
 * {
@@ -8,65 +10,81 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background: linear-gradient(135deg, #232526 0%, #0256f1 100%);
 }
 
 .clock-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  gap: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .time-section {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  margin-bottom: 20px; /* Espaço entre minutos e segundos */
-}
+  margin-bottom: 10px;
+  gap: 18px;
+  width: 100%;
+
 
 .seconds-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 0;
+  gap: 8px;
 }
 
 .flip-unit {
-  perspective: 1000px;
-  margin: 0 10px;
+  perspective: 1200px;
+  margin: 0 6px;
+  filter: drop-shadow(0 6px 18px #0008);
 }
 
 .flip-card {
   position: relative;
-  width: 300px;
-  height: 500px;
-  background: #1d1c1c; /* Cinza escuro */
-  color: #b8bdee;      /* Branco */
-  font-size: 320px;
-  line-height: 500px;
+  width: 260px;
+  height: 380px;
+  background: linear-gradient(160deg, #232526 60%, #3a3a40 100%);
+  color: #e0e6ff;
+  font-size: 310px;
+  line-height: 340px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 32px;
   overflow: hidden;
+  box-shadow: 0 12px 48px #000a, 0 2px 0 #0256f1
+  border: 3.5px solid #2e2e4d;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
-  font-family: 'Orbitron', sans-serif; /* Fonte digital */
-
+  transition: transform 0.6s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
+  letter-spacing: 2px;
+}
 }
 
 /* Estilos específicos para os segundos, menores e alinhados abaixo */
 .flip-unit.small .flip-card {
   width: 100px;
   height: 150px;
-  font-size: 90px;
-  line-height: 150px;
+  font-size: 120px;
+  line-height: 130px;
+  border-radius: 18px;
+  font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
 }
 
 .flip-card-front,
@@ -75,8 +93,71 @@ html, body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  text-shadow: 0 2px 12px #000a, 0 1px 0 #fff2;
+  background: linear-gradient(180deg, #232526 80%, #2e2e4d 100%);
+  box-shadow: 0 1.5px 0 #0256f1 inset;
+  font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
+}
+/* Segundos ao lado dos minutos, alinhados na base */
+.seconds-inline {
+  align-self: flex-end;
+  margin-left: 2px;
 }
 
 .flip-card-back {
   transform: rotateX(180deg);
+}
+
+/* Separadores de dois pontos estilizados */
+.time-section .flip-unit:nth-child(2)::after {
+  content: ':';
+  color: #ffffff;
+  font-size: 110px;
+  font-weight: 900;
+  margin: 0 8px;
+  position: absolute;
+  right: -38px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-shadow: 0 2px 12px #000a, 0 1px 0 #fff2;
+  pointer-events: none;
+}
+
+/* Dois pontos menores e alinhados com os segundos */
+.time-section .flip-unit:nth-child(4)::after {
+  content: ':';
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0 2px;
+  position: absolute;
+  right: -22px;
+  top: 80%;
+  transform: translateY(-50%);
+  text-shadow: 0 2px 12px #000a, 0 1px 0 #fff2;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .flip-card {
+    width: 90px;
+    height: 130px;
+    font-size: 70px;
+    line-height: 130px;
+  }
+  .flip-unit.small .flip-card {
+    width: 36px;
+    height: 54px;
+    font-size: 24px;
+    line-height: 54px;
+  }
+  .time-section .flip-unit:nth-child(2)::after,
+  .time-section .flip-unit:nth-child(4)::after {
+    font-size: 48px;
+    right: -18px;
+  }
 }
