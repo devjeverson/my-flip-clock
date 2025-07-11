@@ -68,8 +68,8 @@ html, body {
   text-align: center;
   border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 12px 48px #000a, 0 2px 0 #0256f1
-  border: 3.5px solid #2e2e4d;
+  box-shadow: 0 12px 48px #000a, 0 2px 0 #fff;
+  border: 3.5px solid #fcfcfc;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
   font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
@@ -98,8 +98,8 @@ html, body {
   justify-content: center;
   font-weight: 700;
   text-shadow: 0 2px 12px #000a, 0 1px 0 #fff2;
-  background: linear-gradient(180deg, #232526 80%, #2e2e4d 100%);
-  box-shadow: 0 1.5px 0 #0256f1 inset;
+  background: linear-gradient(180deg, #232526 80%, #000000 100%);
+  box-shadow: 0 1.5px 0 #fff inset;
   font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
 }
 /* Segundos ao lado dos minutos, alinhados na base */
