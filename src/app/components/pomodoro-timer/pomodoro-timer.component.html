@@ -1,5 +1,5 @@
 <div class="clock-container pomodoro-timer" [ngClass]="state.mode">
-  <h2>{{ label }}</h2>
+  
 
   <!-- Botões -->
   <div class="controls">
@@ -9,8 +9,7 @@
     <button (click)="pomodoro.reset()">🔄 Resetar</button>
   </div>
 
-  <!-- Ciclo -->
-  <p>Ciclos concluídos: {{ state.cycleCount % 4 }} / 4</p>
+  
 
   <div class="pomodoro-flip-container">
   <div class="pomodoro-flip-section">
@@ -41,6 +40,11 @@
       </div>
     </div>
   </div>
-</div>
+  </div>
+  <div class="pomodoro-info">
+    <h2>{{ label }}</h2>
 
+  <!-- Ciclo -->
+  <p>Ciclos concluídos: {{ state.cycleCount % 4 }} / 4</p>
+  </div>
 </div>

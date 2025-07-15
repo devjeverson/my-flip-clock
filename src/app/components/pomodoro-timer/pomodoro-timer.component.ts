@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PomodoroService, PomodoroState } from '../../services/pomodoro.service';
 import { Subscription } from 'rxjs';
@@ -8,6 +8,7 @@ import { inject } from '@angular/core';
   selector: 'app-pomodoro-timer',
   standalone: true,
   imports: [CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './pomodoro-timer.component.html',
   styleUrls: ['./pomodoro-timer.component.css']
 })
