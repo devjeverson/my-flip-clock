@@ -1,0 +1,14 @@
+<div class="pomodoro-timer" [ngClass]="state.mode">
+  <h2>{{ label }}</h2>
+
+  <!-- Botões -->
+  <div class="controls">
+    <button (click)="pomodoro.startPause()">
+      {{ state.running ? '⏸️ Pausar' : '▶️ Iniciar' }}
+    </button>
+    <button (click)="pomodoro.reset()">🔄 Resetar</button>
+  </div>
+
+  <!-- Ciclo -->
+  <p>Ciclos concluídos: {{ state.cycleCount % 4 }} / 4</p>
+</div>
