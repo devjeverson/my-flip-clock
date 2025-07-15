@@ -81,11 +81,11 @@
 
 /* Cards menores para os centésimos */
 .pomodoro-flip-unit.small .pomodoro-flip-card {
-  width: 60px;
-  height: 90px;
-  font-size: 50px;
-  line-height: 90px;
-  border-radius: 16px;
+  width: 100px;
+  height: 150px;
+  font-size: 120px;
+  line-height: 130px;
+  border-radius: 18px;
 }
 
 .seconds-inline {
@@ -105,7 +105,7 @@
 }
 
 .pomodoro-flip-separator {
-  font-size: 5rem;
+  font-size: 7rem;
   color: #ffffff;
   font-family: 'DS-Digital', 'VT323', 'Orbitron', monospace;
   font-weight: bold;
@@ -115,10 +115,10 @@
 }
 
 .pomodoro-flip-separator.small-separator {
-  font-size: 3.5rem;
+  font-size: 4rem;
   align-self: flex-end;
   color: #ffffff;
-  margin: 25px 8px;
+  margin: 55px 8px;
   line-height: 1;
 }
 
