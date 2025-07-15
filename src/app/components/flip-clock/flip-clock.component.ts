@@ -15,7 +15,7 @@ export class FlipClockComponent implements OnInit, OnDestroy {
   minutesUnits = 0;
   secondsTens = 0;
   secondsUnits = 0;
-  private intervalId: any;
+  private intervalId: ReturnType<typeof setInterval> | undefined;
 
   ngOnInit(): void {
     this.updateFromDate(new Date());

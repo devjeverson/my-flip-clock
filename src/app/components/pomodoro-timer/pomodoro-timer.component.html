@@ -1,4 +1,4 @@
-<div class="pomodoro-timer" [ngClass]="state.mode">
+<div class="clock-container pomodoro-timer" [ngClass]="state.mode">
   <h2>{{ label }}</h2>
 
   <!-- Botões -->
@@ -11,4 +11,36 @@
 
   <!-- Ciclo -->
   <p>Ciclos concluídos: {{ state.cycleCount % 4 }} / 4</p>
+
+  <div class="pomodoro-flip-container">
+  <div class="pomodoro-flip-section">
+    <!-- Minutos -->
+    <div class="pomodoro-flip-unit" *ngFor="let char of [formattedTime[0], formattedTime[1]]">
+      <div class="pomodoro-flip-card">
+        <div class="pomodoro-flip-card-front">{{ char }}</div>
+      </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="pomodoro-flip-separator">:</div>
+
+    <!-- Segundos -->
+    <div class="pomodoro-flip-unit" *ngFor="let char of [formattedTime[3], formattedTime[4]]">
+      <div class="pomodoro-flip-card">
+        <div class="pomodoro-flip-card-front">{{ char }}</div>
+      </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="pomodoro-flip-separator small-separator">:</div>
+
+    <!-- Centésimos -->
+    <div class="pomodoro-flip-unit small seconds-inline" *ngFor="let char of [formattedTime[6], formattedTime[7]]">
+      <div class="pomodoro-flip-card">
+        <div class="pomodoro-flip-card-front">{{ char }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>

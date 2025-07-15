@@ -1,0 +1,43 @@
+@import url('https://fonts.cdnfonts.com/css/ds-digital');
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 140px;
+  background: transparent;
+  z-index: 1000;
+}
+
+.menu button {
+  width: 120px;
+  height: 60px;
+  background: linear-gradient(160deg, #232526 60%, #3a3a40 100%);
+  color: #e0e6ff;
+  font-family: 'DS-Digital', 'VT323', 'Orbitron', monospace;
+  font-size: 1.3rem;
+  border: 3px solid #fcfcfc;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px #0008, 0 2px 0 #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+  margin-bottom: 0;
+}
+
+.menu button.active,
+.menu button:focus,
+.menu button:hover {
+  background: #2d2f36;
+  color: #fff;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 32px #000a, 0 2px 0 #fff;
+  border-color: #fff;
+}

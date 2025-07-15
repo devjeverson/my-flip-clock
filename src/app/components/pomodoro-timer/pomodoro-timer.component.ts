@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PomodoroService, PomodoroState } from '../../services/pomodoro.service';
 import { Subscription } from 'rxjs';
+import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-pomodoro-timer',
@@ -14,7 +15,7 @@ export class PomodoroTimerComponent implements OnInit, OnDestroy {
   state!: PomodoroState;
   private sub!: Subscription;
 
-  constructor(public pomodoro: PomodoroService) {}
+  pomodoro = inject(PomodoroService);
 
   ngOnInit(): void {
     this.sub = this.pomodoro.state$.subscribe(s => this.state = s);
@@ -26,10 +27,14 @@ export class PomodoroTimerComponent implements OnInit, OnDestroy {
   }
 
   get formattedTime(): string {
-    const m = Math.floor(this.state.timeLeft / 60).toString().padStart(2, '0');
-    const s = (this.state.timeLeft % 60).toString().padStart(2, '0');
-    return `${m}:${s}`;
-  }
+  const total = this.state.timeLeft * 1000 + this.state.milliseconds; // exemplo, 150030 ms
+  const minutes = Math.floor(total / 60000).toString().padStart(2, '0');
+  const seconds = Math.floor((total % 60000) / 1000).toString().padStart(2, '0');
+  const centiseconds = Math.floor((total % 1000) / 10).toString().padStart(2, '0');
+
+  return `${minutes}:${seconds}:${centiseconds}`;
+}
+
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();

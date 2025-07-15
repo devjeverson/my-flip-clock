@@ -16,44 +16,8 @@ html, body {
   background: linear-gradient(135deg, #232526 0%, #0256f1 100%);
 }
 
-.clock-menu {
-  position: fixed;
-  left: 25px;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  z-index: 1000;
-  gap: 16px;
-}
 
-.clock-menu button {
-  width: 150px;
-  height: 60px;
-  margin-bottom: 12px;
-  background: linear-gradient(160deg, #232526 60%, #3a3a40 100%);
-  color: #e0e6ff;
-  font-family: 'DS-Digital', 'VT323', 'Orbitron', 'Press Start 2P', monospace, sans-serif;
-  font-size: 1.3rem;
-  border: 3px solid #fcfcfc;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px #0008, 0 2px 0 #fff;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.2s;
-  outline: none;
-}
 
-.clock-menu button:hover, .clock-menu button:focus {
-  background: #2d2f36;
-  color: #fff;
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 12px 32px #000a, 0 2px 0 #fff;
-}
 
 .clock-container {
   display: flex;
